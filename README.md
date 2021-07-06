@@ -1,7 +1,7 @@
 # Having Fun With Cobol
 Fundamental and very basic stuff in Cobol
 
-When I started learning COBOL my biggest challenge was to search fundamental stuff. So I had to look a lot of code to find How to do X, Y and Z. 
+When I started learning COBOL my biggest challenge was to search fundamental stuff. So I had to look a lot of code to find How to do specific things.
 
 Here a list of fundamentals. Most programs do a single specific thing and nothing else, so you can use it as reference.
 
@@ -32,5 +32,5 @@ Here a list of fundamentals. Most programs do a single specific thing and nothin
 
 - Pardon my antipattern!
 
-The thing I find harderst reading existing cobol code is the fact that most developers sadistically use very obfuscative standards in their variables names. They often have names like "WS-XKY-ENIGMATIC", of paragraphs like "PARA-1". As you can see, hifens, ALL_CAPS, and weird names.
+The thing I find harderst reading existing cobol code is the fact that most developers sadistically use very obfuscative standards in their variables names. They often have names like "WS-XKY-ENIGMATIC", of paragraphs like "A-PARA-1". As you can see, hifens, ALL_CAPS, and weird names. Also little Ident doesn't hurt.
 This programs are done for educational purposes, so I'll follow more modern conventions of naming. :)

@@ -1,4 +1,4 @@
-*> Sample COBOL program
+*> The Fibonacci sequence in COBOL
 IDENTIFICATION DIVISION.
     PROGRAM-ID. fibonacci.
     AUTHOR. Gustavo Teixeira - gsteixei@gmail.com

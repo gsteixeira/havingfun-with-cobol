@@ -1,8 +1,5 @@
-*> List Prime Numbers up to 99
-*>     simple code that generates prime numbers
-*>  Needs improvement:
-*>      comparisson between float and integer can be more efficient. 
-*>      I calculate them twice :o
+*> List Prime Numbers up to 99 in COBOL
+*>     generates prime numbers
 IDENTIFICATION DIVISION.
     PROGRAM-ID. primes.
     AUTHOR. gsteixei@gmail.com
@@ -14,14 +11,13 @@ DATA DIVISION.
         01 res_int   PIC 9(3) VALUE ZEROS.
         01 divisor   PIC 9(2) VALUE ZEROS.
         01 isprime   PIC 9 VALUE ZEROS.
-
 PROCEDURE DIVISION.
     DISPLAY "The prime numbers sequence".
     PERFORM VARYING num FROM 1 BY 1 UNTIL num = 99
         MOVE 1 TO isprime
         PERFORM VARYING divisor FROM 2 BY 1 UNTIL divisor >= num
             COMPUTE res_float = num / divisor
-            COMPUTE res_int = num / divisor
+            MOVE res_float TO res_int
             IF res_int = res_float THEN
                 MOVE 0 TO isprime
                 EXIT PERFORM
