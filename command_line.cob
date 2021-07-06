@@ -5,8 +5,7 @@
                 01  first-arg          PIC X(10)         VALUE SPACES.
 
         PROCEDURE DIVISION.
-            MAINLINE.
-                ACCEPT first-arg FROM COMMAND-LINE.
-                DISPLAY "You said " first-arg.
+            ACCEPT first-arg FROM COMMAND-LINE.
+            DISPLAY "You said " first-arg.
             STOP RUN.
         END PROGRAM cmdline.

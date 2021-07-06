@@ -20,18 +20,15 @@ END PROGRAM demo.
 *>    The key difference is that I declare de PROCEDURE DIVISION with USING
 IDENTIFICATION DIVISION.
     PROGRAM-ID. plus-two.
-    *> multiply a number by two
 DATA DIVISION.
     WORKING-STORAGE SECTION.
-        01 aux        PIC 999 VALUE ZEROS.
+        01 b        PIC 999 VALUE ZEROS.
     LINKAGE SECTION.
         01 arg        PIC 999 VALUE ZEROS.
         01 answer     PIC 9999 VALUE ZEROS.
 PROCEDURE DIVISION USING arg, answer.
-    *> we don't need this, but is here for demonstration purposes. Use a local var
-    MOVE 2 TO aux.
-    COMPUTE answer = arg * aux
-    DISPLAY " the answer " answer.
+    MOVE 2 TO b.
+    COMPUTE answer = arg + b
 END PROGRAM plus-two.
 
 *> TODO Theres two ways of returning data. The above shows passing it to 

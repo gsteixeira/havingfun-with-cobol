@@ -23,7 +23,9 @@ Here a list of fundamentals. Most programs do a single specific thing and nothin
 
 *random.cob* - random number generation.
 
-*primes.cob* - generate a list of primes numbers.
+*time_operations.cob* - functions with time and date.
+
+*primes.cob* - generate a list of prime numbers.
 
 *fibonacci.cob* - print the fibonacci sequence.
 

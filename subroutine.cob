@@ -19,7 +19,7 @@ DATA DIVISION.
     LINKAGE SECTION.
         01 arg        PIC Z(10) VALUE SPACES.
 PROCEDURE DIVISION USING arg.
-    DISPLAY "Hello world from a subroutine, you said ", arg
+    DISPLAY "Hello from subroutine, you said ", arg
     STOP RUN.
 END PROGRAM do-something.
 
