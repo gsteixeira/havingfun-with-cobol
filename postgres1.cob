@@ -6,9 +6,9 @@
         *>      to optimization or DRY. 
         *>      It's sequential and monolithic on purpose.
         *>      If you are looking for a less bulky version, take a look at 
-        *>          postgre2.cob file.
+        *>          postgres2.cob and postgres.cob file.
         *>    Also compiles in "non-free format".
-        *>      build: cobc -xj -lpq postgres2.cob
+        *>      build: cobc -xj -lpq postgres1.cob
         *>    Usage:
         *>   
         *>   createdb cobol

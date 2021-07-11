@@ -35,6 +35,8 @@ Here a list of fundamentals. Most programs do a single specific thing and nothin
 
 *postgres2.cob* - postgres with COBOL (less monolithic, less didatic).
 
+*postgres.cob* - tries to be more clean and production friendly.
+
 *python_bindings* - calling COBOL from Python and passing variables.
 
 - Pardon my antipattern!
