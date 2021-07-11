@@ -1,13 +1,12 @@
         *> **********************************************************************
-        *> This program is:
-        *>    a simple connection and data retrieval from Postgres using COBOL
+        *> This program does connect and get data from Postgres using COBOL
         *>
-        *>    to run this, you need LibPq, a Postgre server and GnuCobol.
+        *>    To run this, you need libpq, a Postgres server and GnuCobol.
         *>    This is for educational purposes and takes little effort to DRY.
         *>      its a sligtly more advanced example as this check connection 
         *>      status and tries to simplify data retrieval.
         *>    If you want a simpler example, please look at "postgres1.cob"
-        *>    Should compile also in "non-free format".
+        *>    Also compiles in "non-free format".
         *>
         *>    Usage:   
         *>   createdb cobol
@@ -25,13 +24,13 @@
             INSTALLATION. cobc -xj -lpq postgres2.cob
         DATA DIVISION.
             WORKING-STORAGE SECTION.
-                01 conn_string      PIC x(124) VALUE 
-                                        'dbname=cobol ' &
-                                        'hostaddr=localhost ' &
-                                        'user=dbuser ' &
-                                        'password=xxxx ' &
-                                        'hostaddr=127.0.0.1 ' &
-                                        'port=5432 ' & x"00".
+                01 conn_string      PIC x(125) VALUE 
+                                        "dbname=cobol " &
+                                        "hostaddr=localhost " &
+                                        "user=dbuser " &
+                                        "password=xxxx " &
+                                        "hostaddr=127.0.0.1 " &
+                                        "port=5432 " & x"00".
                 01 connection       USAGE POINTER.
                 01 db_cursor        USAGE POINTER.
                 01 counter          USAGE BINARY-LONG.
@@ -46,16 +45,14 @@
                     02 username     PIC X(50) VALUE SPACES.
         *> *********************************************************************
         PROCEDURE DIVISION.
-            *> connect
-            display connection
+            *> connect, then check status.
             CALL "PQconnectdb" USING conn_string RETURNING connection.
-            *> check status
-            call "PQstatus" using by value connection returning counter.
+            CALL "PQstatus" USING BY VALUE connection RETURNING counter.
             IF counter <> 0 THEN
                 DISPLAY "Connection error! " counter
                 STOP RUN
             END-IF.
-            *> query DB, it will return a cursor
+            *> query DB, will return a cursor
             CALL "PQexec" USING BY VALUE connection BY REFERENCE 
                 "SELECT user_id, username FROM test;" & x"00"
                 RETURNING db_cursor END-CALL.

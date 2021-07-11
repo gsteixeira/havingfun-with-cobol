@@ -1,14 +1,13 @@
         *> **********************************************************************
-        *> This program is:
-        *>    a simple connection and data retrieval from Postres using COBOL
+        *> This program does connect and get data from Postgres using COBOL
         *>
-        *>    to run this, you need LibPq, a Postgre server and GnuCobol.
+        *>    To run this, you need libpq, a Postgres server and GnuCobol.
         *>    This is for educational purposes and does not take any effort 
         *>      to optimization or DRY. 
         *>      It's sequential and monolithic on purpose.
         *>      If you are looking for a less bulky version, take a look at 
         *>          postgre2.cob file.
-        *>    Should compile also in "non-free format".
+        *>    Also compiles in "non-free format".
         *>      build: cobc -xj -lpq postgres2.cob
         *>    Usage:
         *>   
@@ -28,13 +27,13 @@
             INSTALLATION. cobc -xj -lpq postgres1.cob
         DATA DIVISION.
             WORKING-STORAGE SECTION.
-                01 conn_string      PIC x(124) VALUE 
-                                        'dbname=cobol ' &
-                                        'hostaddr=localhost ' &
-                                        'user=dbuser ' &
-                                        'password=xxxx ' &
-                                        'hostaddr=127.0.0.1 ' &
-                                        'port=5432 ' & x"00".
+                01 conn_string      PIC x(125) VALUE 
+                                        "dbname=cobol " &
+                                        "hostaddr=localhost " &
+                                        "user=dbuser " &
+                                        "password=xxxx " &
+                                        "hostaddr=127.0.0.1 " &
+                                        "port=5432 " & x"00".
                 01 connection       USAGE POINTER.
                 01 db_cursor        USAGE POINTER.
                 01 counter          USAGE BINARY-LONG.
@@ -51,7 +50,7 @@
         PROCEDURE DIVISION.
             *> connect
             CALL "PQconnectdb" USING conn_string RETURNING connection.
-            *> query DB, it will return a cursor
+            *> query DB, will return a cursor
             CALL "PQexec" USING BY VALUE connection BY REFERENCE 
                 "SELECT user_id, username FROM test;" & x"00"
                 RETURNING db_cursor END-CALL.
