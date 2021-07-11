@@ -29,6 +29,13 @@ Here a list of fundamentals. Most programs do a single specific thing and nothin
 
 *fibonacci.cob* - print the fibonacci sequence.
 
+*palindrome.cob* - check if a string is palindrome.
+
+*postgres1.cob* - get data from postgresql with COBOL (didatic version).
+
+*postgres2.cob* - postgres with COBOL (less monolithic, less didatic).
+
+*python_bindings* - calling COBOL from Python and passing variables.
 
 - Pardon my antipattern!
 
