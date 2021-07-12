@@ -1,9 +1,9 @@
         *> This programs are made to test python bindings
         *> cobc --debug -b --free -o libtest.so libtest.cob
         IDENTIFICATION DIVISION.
+            PROGRAM-ID. numeric_arguments.
             *> this one takes two arguments and multiply. Note that by current
             *> limitations of gnucobol it can only return integers.
-            PROGRAM-ID. numeric_arguments.
         DATA DIVISION.
             WORKING-STORAGE SECTION.
                 01 int_one       PIC 9999 VALUE ZEROS.
@@ -20,6 +20,27 @@
             DISPLAY "    called with " int_one " * " int_two " = " answer.
             GOBACK RETURNING answer.
         END PROGRAM numeric_arguments.
+
+        *> ********************************
+        IDENTIFICATION DIVISION.
+            PROGRAM-ID. change_string.
+            *> receives a string by the pointer, then change it.
+        DATA DIVISION.
+            WORKING-STORAGE SECTION.
+                01 input_argument   PIC Z(22) VALUE SPACES.
+                01 str_from_python  PIC Z(22) BASED.
+            LINKAGE SECTION.
+                01 pointer_argument USAGE POINTER.
+        PROCEDURE DIVISION USING BY VALUE pointer_argument.
+            SET ADDRESS OF str_from_python TO pointer_argument.
+            STRING str_from_python DELIMITED BY x"00"
+                    INTO input_argument END-STRING
+            DISPLAY "Python said: " input_argument
+            *> This changes the value of the string.
+            STRING "Hello from COBOL!!!" & x"00"
+                    INTO str_from_python end-string.
+            GOBACK.
+        END PROGRAM change_string.
 
         *> ********************************
         *> Return an integer

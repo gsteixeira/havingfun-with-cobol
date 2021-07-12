@@ -95,7 +95,7 @@
             get_value.
                 *> get value from table cell
                 CALL "PQgetvalue" USING BY VALUE db_cursor 
-                        BY VALUE db_row by value db_column
+                        BY VALUE db_row BY VALUE db_column
                         RETURNING result_pointer END-CALL
                 SET ADDRESS OF result_string TO result_pointer
                 STRING result_string DELIMITED BY x"00" 
