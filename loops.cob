@@ -1,7 +1,3 @@
-        *> Having fun with COBOL
-        *> This program explores various COBOL features. Mostly.
-        *> Call to funtions, user input, loops, ifs, and even GOTOs.
-
         IDENTIFICATION DIVISION.
             PROGRAM-ID. loops.
         DATA DIVISION.

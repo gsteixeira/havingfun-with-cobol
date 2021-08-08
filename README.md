@@ -23,6 +23,8 @@ Here a list of fundamentals. Most programs do a single specific thing and nothin
 
 *random.cob* - random number generation.
 
+*env_var.cob* - how to get value from environment variable in cobol.
+
 *time_operations.cob* - functions with time and date.
 
 *primes.cob* - generate a list of prime numbers.

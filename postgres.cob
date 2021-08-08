@@ -1,5 +1,5 @@
         *> **********************************************************************
-        *> This program does connect and get data from Postgres using COBOL
+        *> Connect and get data from Postgres using COBOL
         *>
         *>    To run this, you need libpq, a Postgres server and GnuCobol.
         *>    This version tries to be more clean and production friendly.
@@ -24,10 +24,9 @@
             WORKING-STORAGE SECTION.
                 01 conn_string      PIC x(125) VALUE 
                                         "dbname=cobol " &
-                                        "hostaddr=localhost " &
                                         "user=dbuser " &
                                         "password=xxxx " &
-                                        "hostaddr=127.0.0.1 " &
+                                        "hostaddr=localhost " &
                                         "port=5432 " & x"00".
                 01 connection       USAGE POINTER.
                 01 db_cursor        USAGE POINTER.
