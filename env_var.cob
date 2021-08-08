@@ -7,6 +7,7 @@
         PROCEDURE DIVISION.
             DISPLAY "PATH" UPON ENVIRONMENT-NAME.
             ACCEPT env_var FROM ENVIRONMENT-VALUE.
+            DISPLAY "the value is " env_var.
         STOP RUN.
 
 
